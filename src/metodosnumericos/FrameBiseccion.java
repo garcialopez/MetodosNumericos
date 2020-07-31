@@ -1547,12 +1547,12 @@ public class FrameBiseccion extends javax.swing.JFrame {
             if ((evaA * evaB) < 0) {
                 do {
                     x = (a + b) / 2;
-                    contador++;
+                    contador++;                                       
+                    evaA = f.eval(a);
+                    evaB = f.eval(b);
                     modelo.addRow(new Object[]{contador, a, evaA, b, evaB, x});
                     tbResultado.setModel(modelo);
                     //System.out.println(contador + "-. (a): " + a + " f(a): " + evaA + " (b): " + b + " f(b): " + evaB + " Raiz: " + x);
-                    evaA = f.eval(a);
-                    evaB = f.eval(b);
                     if (evaA * f.eval(x) < 0) {
                         b = x;
                     } else {
